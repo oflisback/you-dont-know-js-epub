@@ -71,6 +71,22 @@ pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK2.epub" \
   apB.md
 cd ..
 
+echo "Generating: $BOOK3..."
+cd objects-classes
+pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK3.epub" \
+  --epub-embed-font=$FONT_PATH \
+  --css=$ROOT_DIR/epub.css \
+  --no-highlight \
+  -M author="$AUTHOR" \
+  -M title="$TITLE: $BOOK3" \
+  foreword.md \
+  ../preface.md \
+  ch1.md \
+  ch2.md \
+  ch3.md \
+  ch4.md \
+  ch5.md
+cd ..
 
 # ==== NOTE: the 4 books below are from the 1st edition ====
 
